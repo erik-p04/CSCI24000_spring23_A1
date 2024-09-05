@@ -1,0 +1,1 @@
+The user uses make run to start the program. They are then prompted to enter the length of the array, type an integer. Afterwards they will be asked to fill each element of the array, use integers. The program will show the user created array, and also a new version of the array which has been sorted in ascending order using selection sort.
