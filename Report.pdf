@@ -1,0 +1,29 @@
+Code for selection sort:
+
+void SelectionSort(int arr[]){
+        int as = arraySize;
+        for(int i=0;i<as;i++){
+                int small = i;
+                for(int j=i+1;j<as;j++){
+                        if(arr[j] < arr[small]){
+                                small = j;
+                        }
+                }
+                int temp = arr[i];
+                arr[i] = arr[small];
+                arr[small] = temp;
+        }
+}
+
+Analysis:
+
+	Derivation of T(n):
+	c1(n+1) + c2(n) + c3(n^2/2 + n/2) + c4(tj(n^2/2 - n/2)) + c5(tj(n^2/2 - n/2)) + c6(n) + c7(n) + c8(n)
+
+	Best Case: tj = 0
+	c1(n+1) + (c2 + c6 + c7 + c8)(n) + c3(n^2/2 - n/2) = 0(n^2)
+
+	Worst Case: tj = 1:
+	c1(n+1) + (c2 + c6 + c7 + c8)(n) + c3(n^2/2 - n/2) + (c4 + c5)(n^2/2 - n/2) = 0(n^2)
+
+	In both the best and the worst case, selection sort is O(n^2) meaning it is quadratic. This is because regardless of input, this sorting method will run the same number of comparisons in both cases. The only thing that changes is the number of swaps made, however the algorithm still needs to compare with the entire array using the nested for loops.
